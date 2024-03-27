@@ -1,0 +1,60 @@
+@keyframes boxChange {
+  0%,
+  100% {
+    border-color: #be27dc;
+  }
+  25% {
+    border-color: #35c3df;
+  }
+  50% {
+    border-color: #1c4bba;
+  }
+  75% {
+    border-color: #e83d23;
+  }
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 3px dotted #ffffff;
+  pointer-events: none;
+  animation: boxChange 5s ease-in-out infinite;
+  transition: border-color;
+}
+
+@keyframes bgChange {
+  0%,
+  100% {
+    background-color: #4896e4;
+  }
+  25% {
+    background-color: #f472b6;
+  }
+  50% {
+    background-color: #1caa7b;
+  }
+  75% {
+    background-color: #483ae4;
+  }
+}
+
+.background-change {
+  animation: bgChange 5s ease-in-out infinite;
+  transition: background-color 1s;
+}
+
+.glassy-background {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.9px);
+  -webkit-backdrop-filter: blur(2.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.9px);
+  -webkit-backdrop-filter: blur(2.9px);
+}
