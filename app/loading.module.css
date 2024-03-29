@@ -5,6 +5,10 @@
   filter: blur(1.1px);
 }
 
+.box:hover {
+  cursor: default;
+}
+
 @keyframes bgChange {
   0%,
   100% {
@@ -43,6 +47,9 @@
 .inner-box {
   width: 300px;
   height: 300px;
-  pointer-events: none;
   z-index: 10;
+}
+
+.inner-box:hover {
+  cursor: default;
 }

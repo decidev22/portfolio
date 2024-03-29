@@ -33,7 +33,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
           setDisplayText((previous) => [
             ...previous,
             <motion.div
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.3 }}
               onHoverStart={(e) => {}}
               onHoverEnd={(e) => {}}
               className="inline-block"

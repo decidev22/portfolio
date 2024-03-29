@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import Loading from "./loading";
 import NavBar from "./component/nav/NavBar";
+import MainPage from "./component/ui/MainPage";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,9 +16,9 @@ export default function Home() {
     return <Loading />;
   }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center p-10 w-full">
       <NavBar />
-      <div>New Portfolio</div>
+      <MainPage />
     </main>
   );
 }
