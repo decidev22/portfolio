@@ -9,7 +9,7 @@ export default function Home() {
   useEffect(() => {
     const timeOut = setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 100000);
   }, []);
 
   if (isLoading) {
