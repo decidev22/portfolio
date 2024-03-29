@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -30,4 +31,22 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.largeText {
+  font-size: 60px;
+  font-weight: 500;
+  font-family: poppins;
+}
+
+.mediumText {
+  font-size: 45px;
+  font-weight: 400;
+  font-family: poppins;
+}
+
+.smallText {
+  font-size: 35px;
+  font-weight: 300;
+  font-family: poppins;
 }
