@@ -1,5 +1,4 @@
 import classes from "./loading.module.css";
-
 import AnimatedText from "./component/animation/AnimationText";
 import Gauge from "./component/animation/Gauge";
 

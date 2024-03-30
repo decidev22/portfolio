@@ -1,12 +1,12 @@
 @keyframes bounce {
   0% {
-    transform: translateY(3px);
+    transform: translateY(40%);
   }
   20% {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
   }
   30% {
-    transform: translateY(2px);
+    transform: translateY(4px);
   }
   40% {
     transform: translateY(-2px);
@@ -15,22 +15,49 @@
     transform: translateY(1px);
   }
   60% {
-    transform: translateY(-1px);
+    transform: translateY(0px);
   }
   70% {
-    transform: translateY(0.5px);
+    transform: translateY(0px);
   }
   80% {
-    transform: translateY(-0.5px);
+    transform: translateY(0px);
   }
   90% {
-    transform: translateY(0.2px);
+    transform: translateY(0px);
+    opacity: 1;
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(-30%);
+    opacity: 0;
   }
 }
 
 .text-bounce {
-  animation: bounce 2s;
+  animation: bounce 4s forwards;
+}
+
+.text-flip-large {
+  font-size: 60px;
+  font-family: poppins;
+  font-weight: 600;
+}
+
+.textflipBox {
+  /* Same size to font of child text-flip-size font-size */
+  height: fit-content;
+  width: fit-content;
+  align-items: center;
+}
+
+.text-flip-medium {
+  font-size: 45px;
+  font-family: poppins;
+  font-weight: 600;
+}
+
+.text-flip-small {
+  font-size: 35px;
+  font-family: poppins;
+  font-weight: 600;
 }

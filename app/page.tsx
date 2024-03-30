@@ -5,12 +5,21 @@ import NavBar from "./component/nav/NavBar";
 import MainPage from "./component/ui/MainPage";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const timeOut = setTimeout(() => {
-      setIsLoading(false);
+      const storeIsLoading = localStorage.getItem("isLoading");
+      const now = Date.now();
+      if (!storeIsLoading) {
+        setIsLoading(true);
+        localStorage.setItem("isLoading", `${now}`);
+      } else {
+        setIsLoading(false);
+      }
     }, 8000);
-  }, []);
+    return () => clearTimeout(timeOut);
+  }, [isLoading]);
 
   if (isLoading) {
     return <Loading />;

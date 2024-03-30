@@ -1,28 +1,17 @@
 import Image from "next/image";
 // import classes from "./MainPage.module.css";
 import TextFlip from "../animation/TextFlip";
+import AnimationText from "../animation/AnimationText";
+import Main_Greeting from "../pages/mainpageComponent/Main_Greeting";
+import Main_Content from "../pages/mainpageComponent/Main_Content";
 
 const MainPageLayout = () => {
   return (
     <>
-      <div className="grid grid-cols-3 w-full h-full">
-        <div className="col-span-2">
-          <p className="largeText">Welcome to my website</p>
-          <p className="mediumText">Welcome to my website</p>
-          <p className="smallText">Welcome to my website</p>
-          <TextFlip
-            text={[
-              "BackEnd Engineer",
-              "FrontEnd Engineer",
-              "Full Stack Engineer",
-              "Problem Solver",
-            ]}
-            className="mediumText bg-gradient-to-r from-blue-500 to-violet-400 inline-flex h-auto"
-          />
-        </div>
-        <div>
-          <p></p>
-        </div>
+      <div className="grid grid-rows w-full h-full">
+        <Main_Greeting />
+
+        <Main_Content />
       </div>
     </>
   );

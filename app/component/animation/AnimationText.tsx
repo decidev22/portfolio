@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 interface AnimatedTextProps {
   text: string;
   className?: string;
+  hoverColor?: string;
 }
 
 // Takes two arguments, text and className prop, text: new line char with \n, className for styles
 const AnimatedText: React.FC<AnimatedTextProps> = ({
   text,
   className = "",
+  hoverColor = "",
 }) => {
   const [displayText, setDisplayText] = useState<React.ReactNode[]>(
     []
@@ -33,10 +35,10 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
           setDisplayText((previous) => [
             ...previous,
             <motion.div
-              whileHover={{ scale: 1.3 }}
+              whileHover={{ scale: 1.3, color: hoverColor }}
               onHoverStart={(e) => {}}
               onHoverEnd={(e) => {}}
-              className="inline-block"
+              className={`inline-block`}
               key={index}
             >
               {text[index]}

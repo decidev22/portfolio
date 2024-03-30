@@ -3,25 +3,76 @@ import classes from "./TextFlip.module.css";
 interface TextFlipProp {
   text: string[];
   className?: string;
+  size?: "small" | "medium" | "large";
+  loadingMessage: string;
 }
 
-const TextFlip: React.FC<TextFlipProp> = ({ text, className }) => {
+const TextFlip: React.FC<TextFlipProp> = ({
+  text,
+  className,
+  size,
+  loadingMessage,
+}) => {
   const [displayText, setDisplayText] = useState("");
   const [key, setKey] = useState(0);
-  const randomIndex = () => Math.floor(Math.random() * text.length);
+
+  let sizeClasses = "";
+  if (!size) {
+    sizeClasses += "";
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setDisplayText(text[randomIndex()]);
-      setKey((prev) => prev + 1);
-    }, 3000);
+      setDisplayText(text[key]);
+      if (key > text.length || key + 1 === text.length) {
+        setKey(0);
+      } else {
+        setKey((prev) => prev + 1);
+      }
+    }, 4000);
     return () => clearTimeout(intervalId);
-  }, [text]);
+  }, [key]);
 
   return (
-    <p key={key} className={`${classes["text-bounce"]} ${className}`}>
-      {!displayText ? "Loading my interests..." : displayText}
-    </p>
+    <>
+      {(!size || size === "large") && (
+        <div
+          key={key}
+          className={`${className} ${classes.textflipBox}`}
+        >
+          <p
+            className={`${classes["text-flip-large"]} ${classes["text-bounce"]}`}
+          >
+            {!displayText ? loadingMessage : displayText}
+          </p>
+        </div>
+      )}
+      {size === "medium" && (
+        <div
+          key={key}
+          className={`${className} ${classes.textflipBox}`}
+        >
+          <p
+            className={`inline-flex ${classes["text-flip-medium"]} ${classes["text-bounce"]} `}
+          >
+            {!displayText ? loadingMessage : displayText}
+          </p>
+        </div>
+      )}
+      {size === "small" && (
+        <div
+          key={key}
+          className={`${className} ${classes.textflipBox}`}
+        >
+          <p
+            key={key}
+            className={`inline-flex ${classes["text-flip-small"]} ${classes["text-bounce"]} `}
+          >
+            {!displayText ? loadingMessage : displayText}
+          </p>
+        </div>
+      )}
+    </>
   );
 };
 
