@@ -1,5 +1,5 @@
 .active {
-  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background: linear-gradient(90deg, #9333ea, #a78bfa);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -17,9 +17,124 @@
 
 .link:hover,
 .link:active {
-  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background: linear-gradient(90deg, #9333ea, #a78bfa);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+  text-shadow: 0 0 18px rgba(197, 42, 248, 0.8);
+}
+
+.sun {
+  opacity: 0.4;
+  position: absolute;
+  top: 0%;
+  left: 5%;
+  background: #febe1b;
+  width: 12px;
+  height: 12px;
+  margin-left: 0px;
+  margin-top: 0px;
+  transform-origin: 50% 50%;
+  border-radius: 43%;
+  animation: sunrotate 5000ms infinite linear;
+}
+.suntwo {
+  opacity: 0.7;
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  background: #f8831d;
+  width: 10px;
+  height: 10px;
+  margin-left: 0px;
+  margin-top: 0px;
+  transform-origin: 50% 50%;
+  border-radius: 43%;
+  animation: sunrotate 5000ms infinite linear;
+}
+
+.wavecontainer {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  height: 50px;
+  width: 45px;
+  top: -50%;
+}
+
+.wave {
+  opacity: 0.4;
+  position: relative;
+  top: -75%;
+  left: 5%;
+  background: #bbf7fb;
+  width: 35px;
+  height: 35px;
+  margin-left: 0px;
+  margin-top: 0px;
+  transform-origin: 50% 45%;
+  border-radius: 43%;
+  animation: drift 7000ms infinite linear;
+}
+
+.wavetwo {
+  position: relative;
+  top: -160%;
+  left: 15%;
+  width: 25px;
+  height: 25px;
+  margin-left: 0px;
+  margin-top: 0px;
+  transform-origin: 50% 45%;
+  border-radius: 43%;
+  animation: drift 9000ms infinite linear;
+  opacity: 0.6;
+  background: #428dcb;
+}
+
+.wavethree {
+  position: relative;
+  top: -300%;
+  left: 15%;
+  width: 35px;
+  height: 35px;
+  margin-left: 0px;
+  margin-top: 0px;
+  transform-origin: 50% 45%;
+  border-radius: 40%;
+  animation: drift 15000ms infinite linear;
+  opacity: 0.5;
+  background: #cfd8e0;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(4px) rotate(120deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(160deg);
+  }
+  75% {
+    transform: translateY(2px) rotate(200deg);
+  }
+  85% {
+    transform: translateY(0px) rotate(270deg);
+  }
+  90% {
+    transform: translateY(-5px) rotate(300deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+@keyframes sunrotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

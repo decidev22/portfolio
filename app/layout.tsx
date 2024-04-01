@@ -19,7 +19,9 @@ export default function RootLayout({
     <Fragment>
       <html>
         <body>
-          <main className={inter.className}>{children}</main>
+          <main className={`${inter.className} ml-5 mr-5`}>
+            {children}
+          </main>
         </body>
       </html>
     </Fragment>

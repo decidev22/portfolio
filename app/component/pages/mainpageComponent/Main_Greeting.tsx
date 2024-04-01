@@ -4,7 +4,7 @@ import TextFlip from "../../animation/TextFlip";
 const Main_Greeting = () => {
   return (
     <>
-      <div className="largeText mt-5">
+      <div className="largeText mt-10">
         <div className="inline-block">
           {" "}
           <TextFlip
