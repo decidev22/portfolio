@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Loading from "./loading";
 import NavBar from "./component/nav/NavBar";
-import MainPage from "./component/ui/MainPage";
+import MainPageLayout from "./component/ui/MainPage";
 import MainBottom from "./component/pages/mainPageComponent/Main_Bottom";
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center w-full">
       <NavBar />
-      <MainPage />
+      <MainPageLayout />
       <MainBottom />
     </main>
   );
