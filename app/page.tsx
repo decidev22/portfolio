@@ -4,6 +4,7 @@ import Loading from "./loading";
 import NavBar from "./component/nav/NavBar";
 import MainPageLayout from "./component/ui/MainPage";
 import MainBottom from "./component/pages/mainPageComponent/Main_Bottom";
+import { poppins } from "./fonts";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +31,7 @@ export default function Home() {
     return <Loading />;
   }
   return (
-    <main className="flex min-h-screen flex-col items-center w-full">
+    <main className={`poppins-font flex min-h-screen flex-col items-center w-full`}>
       <NavBar />
       <MainPageLayout />
       <MainBottom />

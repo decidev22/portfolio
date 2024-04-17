@@ -1,7 +1,3 @@
-import Image from "next/image";
-// import classes from "./MainPage.module.css";
-import TextFlip from "../animation/TextFlip";
-import AnimationText from "../animation/AnimationText";
 import Main_Greeting from "../pages/mainPageComponent/Main_Greeting";
 import Main_Content from "../pages/mainPageComponent/Main_Content";
 
