@@ -1,4 +1,4 @@
-import TextSpring from "../../animation/TextSpting";
+import TextSpring from "../../animation/TextSpring";
 
 const MainBottom = () => {
   return (
