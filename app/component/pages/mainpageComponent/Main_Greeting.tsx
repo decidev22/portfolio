@@ -7,17 +7,17 @@ const Main_Greeting = () => {
       <div className="largeText mt-10">
         <div className="inline-block">
           {" "}
-          <TextFlip
+          {/* <TextFlip
             text={["Kia Ora,", "Hello,", "안녕하세요,", "G'day,"]}
             size="large"
             loadingMessage="Greetings,"
-          />
-          My name is Andy,{" "}
+          /> */}
+          Kia Ora,<br/>My name is Andy, a{" "}
         </div>
       </div>
       <AnimationText
         text="SOFTWARE ENGINEER"
-        className="font-semibold largeText"
+        className="stressText"
         hoverColor="#a78bfa"
       />
       <div className="flex flex-col">

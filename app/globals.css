@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.poppins-font{
-  font-family: var(--font-poppins);
-}
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -38,6 +34,12 @@ body::-webkit-scrollbar {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.stressText {
+  font-size: 60px;
+  font-weight: 700;
+  font-family: var(--font-poppins);
 }
 
 .largeText {
