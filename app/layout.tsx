@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { poppins } from "./fonts"; 
 import "./globals.css";
 import { Fragment } from "react";
-
-const inter = Inter({ subsets: ["latin"] });
+import { poppins } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Andy's Portfolio",
@@ -19,7 +18,9 @@ export default function RootLayout({
     <Fragment>
       <html>
         <body>
-          <main className={inter.className}>{children}</main>
+          <main className={`${poppins.className} ml-5 mr-5`}>
+            {children}
+          </main>
         </body>
       </html>
     </Fragment>

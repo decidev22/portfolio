@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -37,20 +36,26 @@ body::-webkit-scrollbar {
   }
 }
 
+.stressText {
+  font-size: 60px;
+  font-weight: 700;
+  font-family: var(--font-poppins);
+}
+
 .largeText {
   font-size: 60px;
   font-weight: 500;
-  font-family: poppins;
+  font-family: var(--font-poppins);
 }
 
 .mediumText {
   font-size: 45px;
   font-weight: 500;
-  font-family: poppins;
+  font-family: var(--font-poppins);
 }
 
 .smallText {
   font-size: 35px;
   font-weight: 400;
-  font-family: poppins;
+  font-family: var(--font-poppins);
 }

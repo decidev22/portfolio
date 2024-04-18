@@ -39,7 +39,7 @@
 
 .text-flip-large {
   font-size: 60px;
-  font-family: poppins;
+  font-family: var(--font-poppins);
   font-weight: 600;
 }
 
@@ -52,12 +52,12 @@
 
 .text-flip-medium {
   font-size: 45px;
-  font-family: poppins;
+  font-family: var(--font-poppins);
   font-weight: 600;
 }
 
 .text-flip-small {
   font-size: 35px;
-  font-family: poppins;
+  font-family: var(--font-poppins);
   font-weight: 600;
 }
