@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import classes from "./TextFlip.module.css";
+
 interface TextFlipProp {
   text: string[];
   className?: string;
@@ -29,7 +30,7 @@ const TextFlip: React.FC<TextFlipProp> = ({
       } else {
         setKey((prev) => prev + 1);
       }
-    }, 4000);
+    }, 6000);
     return () => clearTimeout(intervalId);
   }, [key]);
 
@@ -38,7 +39,7 @@ const TextFlip: React.FC<TextFlipProp> = ({
       {(!size || size === "large") && (
         <div
           key={key}
-          className={`${className} ${classes.textflipBox}`}
+          className={`${className} ${classes.textflipBox} ${classes.transitionWidth}`}
         >
           <p
             className={`${classes["text-flip-large"]} ${classes["text-bounce"]}`}
@@ -48,10 +49,7 @@ const TextFlip: React.FC<TextFlipProp> = ({
         </div>
       )}
       {size === "medium" && (
-        <div
-          key={key}
-          className={`${className} ${classes.textflipBox}`}
-        >
+        <div key={key} className={`${className} ${classes.textflipBox}`}>
           <p
             className={`inline-flex ${classes["text-flip-medium"]} ${classes["text-bounce"]} `}
           >
@@ -60,10 +58,7 @@ const TextFlip: React.FC<TextFlipProp> = ({
         </div>
       )}
       {size === "small" && (
-        <div
-          key={key}
-          className={`${className} ${classes.textflipBox}`}
-        >
+        <div key={key} className={`${className} ${classes.textflipBox}`}>
           <p
             key={key}
             className={`inline-flex ${classes["text-flip-small"]} ${classes["text-bounce"]} `}

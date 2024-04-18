@@ -34,7 +34,7 @@
 }
 
 .text-bounce {
-  animation: bounce 4s forwards;
+  animation: bounce 6s forwards;
 }
 
 .text-flip-large {
@@ -60,4 +60,27 @@
   font-size: 35px;
   font-family: var(--font-poppins);
   font-weight: 600;
+}
+
+@keyframes springWidth {
+  0% {
+    width: 102%;
+  }
+  50% {
+    width: 98%;
+  }
+  70% {
+    width: 101%;
+  }
+  90% {
+    width: 99%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.transitionWidth {
+  animation: springWidth 3s ease forwards;
+  /* animation: widthChange 2s ease-in; */
 }
