@@ -12,9 +12,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, title }) => {
   return (
     <li
       className={
-        path.startsWith(href)
-          ? `${classes.link} ${classes.active}`
-          : `${classes.link}`
+        path === href ? `${classes.link} ${classes.active}` : `${classes.link}`
       }
     >
       <Link href={href}>{title}</Link>

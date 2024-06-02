@@ -14,19 +14,14 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   className = "",
   hoverColor = "",
 }) => {
-  const [displayText, setDisplayText] = useState<React.ReactNode[]>(
-    []
-  );
+  const [displayText, setDisplayText] = useState<React.ReactNode[]>([]);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     if (index < text.length) {
       const delay = setTimeout(() => {
         if (text[index] + text[index + 1] === "\\n") {
-          setDisplayText((previous) => [
-            ...previous,
-            <br key={index} />,
-          ]);
+          setDisplayText((previous) => [...previous, <br key={index} />]);
           setIndex((currentIndex) => currentIndex + 2);
         } else if (text[index] === " ") {
           setDisplayText((previous) => [...previous, " "]);
@@ -35,7 +30,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
           setDisplayText((previous) => [
             ...previous,
             <motion.div
-              whileHover={{ scale: 1.3, color: hoverColor }}
+              whileHover={{ scale: 1.1, color: hoverColor }}
               onHoverStart={(e) => {}}
               onHoverEnd={(e) => {}}
               className={`inline-block`}

@@ -25,7 +25,7 @@ const NavBar = () => {
       </div>
 
       <ul className="list-none">
-        <NavLink href="/introduction" title="Introduction" />
+        <NavLink href="/" title="Home" />
         <NavLink href="/projects" title="Projects" />
         <NavLink href="/blogs" title="Blog" />
         <NavLink href="/contact" title="Contact" />

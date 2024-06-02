@@ -50,7 +50,7 @@ const Main_Greeting = () => {
       <AnimationText
         text="SOFTWARE ENGINEER"
         className="stressText"
-        hoverColor="#a78bfa"
+        hoverColor="#8b5cf6"
       />
       <div className="flex flex-col">
         <span className="largeText">I am interested in... </span>
@@ -63,7 +63,7 @@ const Main_Greeting = () => {
               "Problem Solving",
               "Innovation and Start-ups",
             ]}
-            className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400"
+            className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400 rounded-lg"
             size="large"
             loadingMessage="Loading interests..."
           />

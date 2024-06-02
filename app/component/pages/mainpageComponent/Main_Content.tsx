@@ -6,17 +6,16 @@ const Main_Content = () => {
         <div className="col-span-2 relative">
           <p className="smallText absolute bottom-0 m-2">
             &quot; A Software Engineer can articulate a narrative that goes
-            beyond mere black boxes and complex technical
-            terminologies. &quot;
+            beyond mere black boxes and complex technical terminologies. &quot;
           </p>
         </div>
         <div className="">
-          <Image
+          {/* <Image
             src="/profile_lightnoir.jpg"
             alt="Profile Picture"
             width={300}
             height={300}
-          />
+          /> */}
         </div>
         <div className="h-[500px]">Some Empty Space</div>
       </div>
