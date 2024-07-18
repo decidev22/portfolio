@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import AnimationText from "../../animation/AnimationText";
 import TextFlip from "../../animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
-import Image from "next/image";
-import Arrow from "../../common_components/Arrow";
 import NewZealandMap from "../../common_components/NewZealandMap";
 
 const Main_Greeting = () => {
