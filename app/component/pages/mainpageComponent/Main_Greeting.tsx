@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import AnimationText from "../../animation/AnimationText";
 import TextFlip from "../../animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
+import Image from "next/image";
+import Arrow from "../../common_components/Arrow";
+import NewZealandMap from "../../common_components/NewZealandMap";
 
 const Main_Greeting = () => {
   const [width, setWidth] = useState(0);
@@ -52,10 +55,27 @@ const Main_Greeting = () => {
         className="stressText"
         hoverColor="#8b5cf6"
       />
+      <div className="flex-col w-full largeText">
+        From
+        <span className="italic"> New Zealand</span>
+        <div
+          className={`absolute left-[50%] top-[20%] ${classes.mapContainer}`}
+        >
+          <NewZealandMap />
+        </div>
+      </div>
       <div className="flex flex-col">
-        <span className="largeText">I am interested in... </span>
+        <div className="flex flex-row">
+          <span className="largeText">I am interested in... </span>
+          {/* <div className={`w-20 ml-3 ${classes.arrowContainer}`}>
+            <Arrow />
+            <span className="relative bottom-[95px] left-[40px] text-bold">
+              CLICK ME
+            </span>
+          </div> */}
+        </div>
 
-        <div className={`w-min`} ref={observedDiv}>
+        <div className={`flex-col w-min h-[300px]`} ref={observedDiv}>
           <TextFlip
             text={[
               "Software Engineering",

@@ -1,0 +1,36 @@
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1139.7591552734375;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1139.7591552734375;
+  }
+}
+
+.map1-path {
+  animation: dash 15s infinite;
+}
+
+.map2-path {
+  animation: map2dash 15s infinite;
+}
+
+.mapContainer {
+  transform: rotate(-20deg);
+  transform-origin: center;
+}
+
+@keyframes map2dash {
+  0% {
+    stroke-dashoffset: 1017.0259399414062;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1017.0259399414062;
+  }
+}

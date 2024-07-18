@@ -2,21 +2,14 @@ import Image from "next/image";
 const Main_Content = () => {
   return (
     <>
-      <div className="grid grid-cols-3 mt-[300px]">
-        <div className="col-span-2 relative">
+      <div className="grid mt-[300px]">
+        <div className="col-span-2 relative 2xl:w-[800px] xl:w-[600px] lg:w-[500px]">
           <p className="smallText absolute bottom-0 m-2">
-            &quot; A Software Engineer can articulate a narrative that goes
-            beyond mere black boxes and complex technical terminologies. &quot;
+            &quot;A Software Engineer can articulate a narrative that goes
+            beyond mere black boxes and complex technical terminologies.&quot;
           </p>
         </div>
-        <div className="">
-          {/* <Image
-            src="/profile_lightnoir.jpg"
-            alt="Profile Picture"
-            width={300}
-            height={300}
-          /> */}
-        </div>
+        <div className=""></div>
         <div className="h-[500px]">Some Empty Space</div>
       </div>
     </>
