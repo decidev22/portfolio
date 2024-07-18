@@ -65,12 +65,6 @@ const Main_Greeting = () => {
       <div className="flex flex-col">
         <div className="flex flex-row">
           <span className="largeText">I am interested in... </span>
-          {/* <div className={`w-20 ml-3 ${classes.arrowContainer}`}>
-            <Arrow />
-            <span className="relative bottom-[95px] left-[40px] text-bold">
-              CLICK ME
-            </span>
-          </div> */}
         </div>
 
         <div className={`flex-col w-min h-[300px]`} ref={observedDiv}>
