@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import AnimationText from "../../animation/AnimationText";
 import TextFlip from "../../animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
-import Image from "next/image";
-import Arrow from "../../common_components/Arrow";
 import NewZealandMap from "../../common_components/NewZealandMap";
 
 const Main_Greeting = () => {
@@ -45,7 +43,7 @@ const Main_Greeting = () => {
     <>
       <div className="largeText mt-10">
         <div className="inline-block">
-          Kia Ora,
+          G Day,
           <br />
           My name is Andy, a{" "}
         </div>
@@ -67,12 +65,6 @@ const Main_Greeting = () => {
       <div className="flex flex-col">
         <div className="flex flex-row">
           <span className="largeText">I am interested in... </span>
-          {/* <div className={`w-20 ml-3 ${classes.arrowContainer}`}>
-            <Arrow />
-            <span className="relative bottom-[95px] left-[40px] text-bold">
-              CLICK ME
-            </span>
-          </div> */}
         </div>
 
         <div className={`flex-col w-min h-[300px]`} ref={observedDiv}>

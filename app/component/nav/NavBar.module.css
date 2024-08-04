@@ -24,6 +24,8 @@
   text-shadow: 0 0 18px rgba(241, 200, 255, 0.8);
 }
 
+/* Logo */
+
 .sun {
   opacity: 0.4;
   position: absolute;
@@ -63,12 +65,12 @@
 
 .wave {
   opacity: 0.4;
-  position: relative;
-  top: -75%;
-  left: 5%;
+  position: absolute;
+  top: 55%;
+  left: 25%;
   background: #bbf7fb;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   margin-left: 0px;
   margin-top: 0px;
   transform-origin: 50% 45%;
@@ -77,7 +79,7 @@
 }
 
 .wavetwo {
-  position: relative;
+  position: absolute;
   top: -160%;
   left: 15%;
   width: 25px;
@@ -92,7 +94,7 @@
 }
 
 .wavethree {
-  position: relative;
+  position: absolute;
   top: -300%;
   left: 15%;
   width: 35px;
