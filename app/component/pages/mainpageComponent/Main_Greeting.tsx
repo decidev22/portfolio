@@ -43,7 +43,7 @@ const Main_Greeting = () => {
     <>
       <div className="largeText mt-10">
         <div className="inline-block">
-          Kia Ora,
+          G Day,
           <br />
           My name is Andy, a{" "}
         </div>

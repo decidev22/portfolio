@@ -1,31 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import classes from "./MenuBox.module.css";
+import Image from "next/image";
 
 const MenuBox = () => {
-  useEffect(() => {
-    const cubebox = Array.from(
-      document.getElementsByClassName(
-        `${classes.cube}`
-      ) as HTMLCollectionOf<HTMLElement>
-    );
-    const handleMouseMove = (event: MouseEvent) => {
-      const rotationValue = 270;
-      let mouseX = 0;
-      let mouseY = 0;
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-      let rotateX = -(mouseY / window.innerHeight - 0.5) * rotationValue;
-      let rotateY = (mouseX / window.innerHeight - 0.5) * rotationValue;
-      cubebox.forEach((box) => {
-        box.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      });
-    };
-    return () => {
-      window.addEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+  //   useEffect(() => {
+  //     const cubebox = Array.from(
+  //       document.getElementsByClassName(
+  //         `${classes.cube}`
+  //       ) as HTMLCollectionOf<HTMLElement>
+  //     );
+  //     const handleMouseMove = (event: MouseEvent) => {
+  //       const rotationValue = 270;
+  //       let mouseX = 0;
+  //       let mouseY = 0;
+  //       mouseX = event.clientX;
+  //       mouseY = event.clientY;
+  //       let rotateX = -(mouseY / window.innerHeight - 0.5) * rotationValue;
+  //       let rotateY = (mouseX / window.innerHeight - 0.5) * rotationValue;
+  //       cubebox.forEach((box) => {
+  //         box.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  //       });
+  //     };
+  //     return () => {
+  //       window.addEventListener("mousemove", handleMouseMove);
+  //     };
+  //   }, []);
 
   return (
     <div className={`${classes.container} `}>
@@ -44,19 +45,19 @@ const MenuBox = () => {
             </div>
           </div>
           <div className={`${classes[`cube-face`]} ${classes[`back`]}`}>
-            HOME
+            Projects
           </div>
           <div className={`${classes[`cube-face`]} ${classes[`left`]}`}>
-            PROJECTS
+            Contact
           </div>
           <div className={`${classes[`cube-face`]} ${classes[`right`]}`}>
-            CONTACT
+            About Me
           </div>
           <div className={`${classes[`cube-face`]} ${classes[`top`]}`}>
-            ABOUT
+            Shoutouts
           </div>
           <div className={`${classes[`cube-face`]} ${classes[`bottom`]}`}>
-            SHOUTOUTS
+            Links
           </div>
         </div>
       </div>
