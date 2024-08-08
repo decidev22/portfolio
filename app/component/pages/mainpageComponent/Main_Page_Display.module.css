@@ -1,0 +1,34 @@
+@keyframes left-InfinityFlow {
+  0% {
+    stroke-dashoffset: 1139.7591552734375;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1139.7591552734375;
+  }
+}
+@keyframes right-InfinityFlow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 01139.7591552734375;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.left-Infinity-line {
+  animation: left-InfinityFlow 15s infinite;
+}
+
+.right-Infinity-line {
+  animation: right-InfinityFlow 15s infinite;
+}
+
+.infinityLine {
+  stroke: rgb(211, 208, 117);
+}
