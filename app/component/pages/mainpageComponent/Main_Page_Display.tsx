@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import classes from "./Main_Page_Display.module.css";
 
 type ScreenSize = {
@@ -11,12 +11,16 @@ type ScreenSize = {
 const MainPageDisplay = () => {
   const [screenSize, setScreenSize] = useState<ScreenSize>();
   const [xMid, setXMid] = useState<number>();
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
-      if (screenSize?.width) {
-        setXMid(screenSize?.width / 2);
-      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (screenSize?.width) {
+      setXMid(screenSize?.width / 2);
     }
   }, [screenSize]);
   return (
@@ -24,7 +28,7 @@ const MainPageDisplay = () => {
       {/* Place holding div */}
       <div className="h-80"></div>
       {/* Infinity Line */}
-      <div className={`h-48 ${classes.infinityLine}`}>
+      <div className={`h-48 ${classes.infinityLine} `}>
         <svg
           height="10"
           width={screenSize?.width}
