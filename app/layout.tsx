@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-// import { poppins } from "./fonts"; 
+// import { poppins } from "./fonts";
 import "./globals.css";
 import { Fragment } from "react";
 import { poppins } from "./fonts";
@@ -18,9 +18,7 @@ export default function RootLayout({
     <Fragment>
       <html>
         <body>
-          <main className={`${poppins.className} ml-5 mr-5`}>
-            {children}
-          </main>
+          <main className={`${poppins.className}`}>{children}</main>
         </body>
       </html>
     </Fragment>
