@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import classes from "./Main_Page_Display.module.css";
+import classes from "./Experimental-line.module.css";
 
 type ScreenSize = {
   width: number;

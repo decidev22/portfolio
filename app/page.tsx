@@ -32,12 +32,11 @@ export default function Home() {
   }
   return (
     <main
-      className={`poppins-font flex min-h-screen flex-col items-center w-full`}
+      className={`poppins-font flex min-h-screen flex-col items-center w-full p-5`}
     >
-      {/* <NavBar />
+      <NavBar />
       <MainPageLayout />
-      <MainBottom /> */}
-      <MainPageLayout />
+      <MainBottom />
     </main>
   );
 }
