@@ -19,8 +19,9 @@
 }
 
 .mapContainer {
-  transform: rotate(-20deg);
+  transform: rotate(-15deg);
   transform-origin: center;
+  scale: 0.3;
 }
 
 @keyframes map2dash {

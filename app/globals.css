@@ -18,12 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 body::-webkit-scrollbar {
@@ -43,19 +38,19 @@ body::-webkit-scrollbar {
 }
 
 .largeText {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 500;
   font-family: var(--font-poppins);
 }
 
 .mediumText {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 500;
   font-family: var(--font-poppins);
 }
 
 .smallText {
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 400;
   font-family: var(--font-poppins);
 }
