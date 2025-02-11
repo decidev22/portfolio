@@ -40,25 +40,19 @@ const Main_Greeting = () => {
   );
 
   return (
-    <>
-      <div className="largeText mt-10">
+    <div className="h-screen mt-[200px]">
+      <div className="largeText">
         <div className="inline-block">
           G Day,
           <br />
           My name is Andy, a{" "}
         </div>
       </div>
-      <AnimationText
-        text="SOFTWARE ENGINEER"
-        className="stressText"
-        hoverColor="#8b5cf6"
-      />
+      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8b5cf6" />
       <div className="flex-col w-full largeText">
         From
         <span className="italic"> New Zealand</span>
-        <div
-          className={`absolute left-[50%] top-[20%] ${classes.mapContainer}`}
-        >
+        <div className={`absolute left-[65%] top-[36%] ${classes.mapContainer} z-[-1]`}>
           <NewZealandMap />
         </div>
       </div>
@@ -67,21 +61,16 @@ const Main_Greeting = () => {
           <span className="largeText">I am interested in... </span>
         </div>
 
-        <div className={`flex-col w-min h-[300px]`} ref={observedDiv}>
+        <div className={`flex-col w-min h-min`} ref={observedDiv}>
           <TextFlip
-            text={[
-              "Software Engineering",
-              "Artificial Intelligence",
-              "Problem Solving",
-              "Innovation and Start-ups",
-            ]}
+            text={["Software Engineering", "Artificial Intelligence", "Problem Solving", "Innovation and Start-ups"]}
             className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400 rounded-lg"
             size="large"
             loadingMessage="Loading interests..."
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

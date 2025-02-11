@@ -1,0 +1,8 @@
+.activityBox {
+  background-color: white;
+  border: 1;
+  border-radius: 15px;
+  opacity: 0.2;
+  width: 400px;
+  height: 600px;
+}
