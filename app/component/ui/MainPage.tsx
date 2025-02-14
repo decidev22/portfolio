@@ -6,13 +6,13 @@ const MainPageLayout = () => {
   return (
     <>
       <div className="grid grid-col grid-cols-5 w-full h-full">
-        <div>
+        <div className="border border-1 border-white">
           <p>Sample</p>
         </div>
-        <div>
+        <div className="border border-1 border-white">
           <div className={`absolute ${classes.activityBox}`}>Status</div>
         </div>
-        <div className="grid grid-row z-10 min-w-max">
+        <div className="grid grid-row z-10 min-w-max border border-1 border-white">
           <Main_Greeting />
         </div>
       </div>
