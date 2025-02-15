@@ -1,0 +1,17 @@
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 2644.357;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 2644.357;
+  }
+}
+
+.operaPath {
+  stroke-dasharray: 2644.357;
+  stroke-dashoffset: 2644.357;
+  animation: dash 15s ease-in-out infinite;
+}

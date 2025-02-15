@@ -3,6 +3,7 @@ import AnimationText from "../../animation/AnimationText";
 import TextFlip from "../../animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
 import NewZealandMap from "../../common_components/NewZealandMap";
+import SydneyOperaHouse from "../../common_components/SydneyOperaHouse";
 
 const Main_Greeting = () => {
   const [width, setWidth] = useState(0);
@@ -50,10 +51,10 @@ const Main_Greeting = () => {
       </div>
       <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8b5cf6" />
       <div className="flex-col w-full largeText">
-        From
-        <span className="italic"> New Zealand</span>
-        <div className={`absolute left-[65%] top-[36%] ${classes.mapContainer} z-[-1]`}>
-          <NewZealandMap />
+        In{" "}
+        <div className="inline-flex italic">
+          Sydney, Australia
+          <SydneyOperaHouse />
         </div>
       </div>
       <div className="flex flex-col">
