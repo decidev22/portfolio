@@ -1,19 +1,17 @@
-.sydneyOperaHouse svg {
-  width: 100%;
-  height: 100%;
-}
-
-.strokePath {
-  stroke: white;
-  stroke-width: 3;
-  fill: none;
-  stroke-dasharray: 1000; /* Set a large number, or adjust based on path length */
-  stroke-dashoffset: 1000;
-  animation: draw 4s ease-in-out forwards;
-}
-
-@keyframes draw {
-  to {
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 2644.357;
+  }
+  80% {
     stroke-dashoffset: 0;
   }
+  100% {
+    stroke-dashoffset: 2644.357;
+  }
+}
+
+.operaPath {
+  stroke-dasharray: 2644.357;
+  stroke-dashoffset: 2644.357;
+  animation: dash 15s ease-in-out infinite;
 }
