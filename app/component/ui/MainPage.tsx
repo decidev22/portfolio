@@ -5,16 +5,12 @@ import classes from "./MainPage.module.css";
 const MainPageLayout = () => {
   return (
     <>
-      <div className="grid grid-col grid-cols-5 w-full h-full px-5">
+      <div className="grid grid-col grid-cols-5 w-full h-screen px-5">
         <div className="col-span-2 grid grid-row z-10 min-w-max">
           <Main_Greeting />
         </div>
-        <div className="col-span-3 border border-1 border-white">
+        <div className="col-span-3">
           <div className={`absolute ${classes.activityBox}`}></div>
-        </div>
-
-        <div>
-          <p>Sample</p>
         </div>
       </div>
       <div>
