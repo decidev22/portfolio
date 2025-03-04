@@ -4,7 +4,7 @@ const ProjectPage = () => {
   return (
     <>
       <NavBar />
-      <div className="largeText">Project Page</div>
+      <div className="largeText">Product Page</div>
     </>
   );
 };

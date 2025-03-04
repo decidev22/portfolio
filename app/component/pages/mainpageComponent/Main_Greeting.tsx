@@ -52,7 +52,7 @@ const Main_Greeting = () => {
       <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8b5cf6" />
       <div className="flex-col w-full largeText">
         In{" "}
-        <div className="inline-flex italic">
+        <div className="inline-flex">
           Sydney, Australia
           <SydneyOperaHouse />
         </div>
