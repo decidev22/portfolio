@@ -31,9 +31,7 @@ export default function Home() {
     return <Loading />;
   }
   return (
-    <main
-      className={`poppins-font flex min-h-screen flex-col items-center w-full p-5`}
-    >
+    <main className={`poppins-font flex min-h-screen flex-col items-center w-full`}>
       <NavBar />
       <MainPageLayout />
       <MainBottom />
