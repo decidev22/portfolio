@@ -18,6 +18,7 @@ const TextFlip: React.FC<TextFlipProp> = ({ text, className, size, loadingMessag
   }
 
   useEffect(() => {
+    const time = size === "nav" ? 10000 : 6000;
     const intervalId = setInterval(() => {
       setDisplayText(text[key]);
       if (key > text.length || key + 1 === text.length) {
@@ -25,7 +26,7 @@ const TextFlip: React.FC<TextFlipProp> = ({ text, className, size, loadingMessag
       } else {
         setKey((prev) => prev + 1);
       }
-    }, 6000);
+    }, time);
     return () => clearTimeout(intervalId);
   }, [key]);
 
