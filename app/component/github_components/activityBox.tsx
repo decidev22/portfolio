@@ -1,7 +1,15 @@
 type ActivityType = "PullRequestEvent" | "PushEvent" | "WatchEvent" | "CreateEvent";
 
-const ActivityBox = (type: ActivityType) => {
-  return <div>Some box</div>;
+interface ActivityBoxInterface {
+  type: ActivityType;
+}
+
+const ActivityBox: React.FC<ActivityBoxInterface> = ({ type }) => {
+  return (
+    <div className="flex">
+      <div className="text-white">Event Type : {type}</div>
+    </div>
+  );
 };
 
 export default ActivityBox;
