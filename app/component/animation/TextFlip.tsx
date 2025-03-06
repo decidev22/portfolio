@@ -4,16 +4,11 @@ import classes from "./TextFlip.module.css";
 interface TextFlipProp {
   text: string[];
   className?: string;
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | "nav";
   loadingMessage: string;
 }
 
-const TextFlip: React.FC<TextFlipProp> = ({
-  text,
-  className,
-  size,
-  loadingMessage,
-}) => {
+const TextFlip: React.FC<TextFlipProp> = ({ text, className, size, loadingMessage }) => {
   const [displayText, setDisplayText] = useState("");
   const [key, setKey] = useState(0);
 
@@ -37,32 +32,27 @@ const TextFlip: React.FC<TextFlipProp> = ({
   return (
     <>
       {(!size || size === "large") && (
-        <div
-          key={key}
-          className={`${className} ${classes.textflipBox} ${classes.transitionWidth}`}
-        >
-          <p
-            className={`${classes["text-flip-large"]} ${classes["text-bounce"]}`}
-          >
-            {!displayText ? loadingMessage : displayText}
-          </p>
+        <div key={key} className={`${className} ${classes.textflipBox} ${classes.transitionWidth}`}>
+          <p className={`${classes["text-flip-large"]} ${classes["text-bounce"]}`}>{!displayText ? loadingMessage : displayText}</p>
         </div>
       )}
       {size === "medium" && (
         <div key={key} className={`${className} ${classes.textflipBox}`}>
-          <p
-            className={`inline-flex ${classes["text-flip-medium"]} ${classes["text-bounce"]} `}
-          >
+          <p className={`inline-flex ${classes["text-flip-medium"]} ${classes["text-bounce"]} `}>
             {!displayText ? loadingMessage : displayText}
           </p>
         </div>
       )}
       {size === "small" && (
         <div key={key} className={`${className} ${classes.textflipBox}`}>
-          <p
-            key={key}
-            className={`inline-flex ${classes["text-flip-small"]} ${classes["text-bounce"]} `}
-          >
+          <p key={key} className={`inline-flex ${classes["text-flip-small"]} ${classes["text-bounce"]} `}>
+            {!displayText ? loadingMessage : displayText}
+          </p>
+        </div>
+      )}
+      {size === "nav" && (
+        <div key={key} className={`${className} ${classes.textflipBox}`}>
+          <p key={key} className={`inline-flex ${classes["text-flip-nav"]}} `}>
             {!displayText ? loadingMessage : displayText}
           </p>
         </div>

@@ -62,6 +62,12 @@
   font-weight: 600;
 }
 
+.text-flip-nav {
+  font-size: 20px;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+}
+
 @keyframes springWidth {
   0% {
     width: 102%;

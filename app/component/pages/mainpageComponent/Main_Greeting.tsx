@@ -59,12 +59,12 @@ const Main_Greeting = () => {
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row">
-          <span className="largeText">I am interested in... </span>
+          <span className="largeText">I work on... </span>
         </div>
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>
           <TextFlip
-            text={["Software Engineering", "Artificial Intelligence", "Problem Solving", "Innovation and Start-ups"]}
+            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS Firebase Cloud", "TypeScript Python Go", "MongoDB PostgreSQL"]}
             className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400 rounded-lg"
             size="large"
             loadingMessage="Loading interests..."
