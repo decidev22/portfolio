@@ -1,10 +1,10 @@
 import Image from "next/image";
 import classes from "./SydneyOperaHouse.module.css";
+import { ReactNode } from "react";
 
-const SydneyOperaHouse = ({ className = "" }: { className?: string }) => {
-  // return <Image src={"/SydneyOperaHouse.svg"} alt="Sydney Opera House" width={70} height={50} className={`${classes.mapContainer}`} />;
+const SydneyOperaHouse = () => {
   return (
-    <svg width="100" height="75" viewBox="0 0 395 381" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="50" height="45" viewBox="0 0 395 381" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         id="operaPathId"
         className={`${classes[`operaPath`]}`}

@@ -11,8 +11,12 @@ const MainPageLayout = () => {
           <Main_Greeting />
         </div>
         <div className="col-span-3">
-          <div className={`absolute ${classes.activityBox}`}>
-            <ActivityBox type="CreateEvent" />
+          <div className={`absolute ${classes.activityBoxContainer}`}>
+            <div>
+              {/* Container */}
+              <p>I am doing...</p>
+              <ActivityBox type="CreateEvent" content="Portfolio" />
+            </div>
           </div>
         </div>
       </div>
