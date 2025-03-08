@@ -43,19 +43,11 @@ const Main_Greeting = () => {
   return (
     <div className="h-screen mt-[200px]">
       <div className="largeText">
-        <div className="inline-block">
-          G Day,
-          <br />
-          My name is Andy, a{" "}
-        </div>
+        <div className="inline-block">G Day, My name is Andy, a </div>
       </div>
-      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8b5cf6" />
+      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8489f6" />
       <div className="flex-col w-full largeText">
-        In{" "}
-        <div className="inline-flex">
-          Sydney, Australia
-          <SydneyOperaHouse />
-        </div>
+        In <div className="inline-flex">Sydney, Australia</div>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row">
