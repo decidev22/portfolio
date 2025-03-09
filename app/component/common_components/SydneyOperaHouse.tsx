@@ -1,6 +1,4 @@
-import Image from "next/image";
 import classes from "./SydneyOperaHouse.module.css";
-import { ReactNode } from "react";
 
 const SydneyOperaHouse = () => {
   return (

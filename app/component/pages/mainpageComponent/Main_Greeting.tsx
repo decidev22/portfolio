@@ -42,8 +42,9 @@ const Main_Greeting = () => {
 
   return (
     <div className="h-screen mt-[200px]">
-      <div className="largeText">
-        <div className="inline-block">G Day, My name is Andy, a </div>
+      <div className="flex-col largeText">
+        <div className="inline-block">G&apos;Day!</div>
+        <div>My name is Andy Baeck, a</div>
       </div>
       <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8489f6" />
       <div className="flex-col w-full largeText">
@@ -51,12 +52,12 @@ const Main_Greeting = () => {
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row">
-          <span className="largeText">I work on... </span>
+          <span className="largeText">I work with... </span>
         </div>
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>
           <TextFlip
-            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS Firebase Cloud", "TypeScript Python Go", "MongoDB PostgreSQL"]}
+            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS & Firebase", "TypeScript", "Python", "Go", "MongoDB & PostgreSQL"]}
             className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400 rounded-lg"
             size="large"
             loadingMessage="Loading interests..."
