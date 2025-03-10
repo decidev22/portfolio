@@ -1,4 +1,4 @@
-import ActivityBox from "../github_components/activityBox";
+import ActivityBox from "../github_components/ActivityBox";
 import Main_Content from "../pages/mainPageComponent/Main_Content";
 import Main_Greeting from "../pages/mainPageComponent/Main_Greeting";
 import classes from "./MainPage.module.css";
@@ -17,6 +17,7 @@ const MainPageLayout = () => {
               <ActivityBox type="PullRequestEvent" content="Portfolio" />
               <ActivityBox type="PushEvent" content="Portfolio" />
               <ActivityBox type="CreateEvent" content="Portfolio" />
+              <ActivityBox type="WatchEvent" content="Portfolio" />
             </div>
           </div>
         </div>

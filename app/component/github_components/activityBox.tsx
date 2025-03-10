@@ -1,6 +1,7 @@
 import BranchIcon from "@/public/gitIcons/branch.svg";
 import CommitIcon from "@/public/gitIcons/commit.svg";
 import PullRequestIcon from "@/public/gitIcons/pullrequest.svg";
+import WatchingIcon from "@/public/gitIcons/watching.svg";
 
 type ActivityType = "PullRequestEvent" | "PushEvent" | "WatchEvent" | "CreateEvent";
 
@@ -32,7 +33,7 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, content }) => {
       )}
       {type === "WatchEvent" && (
         <>
-          <CommitIcon className="mr-3" style={{ width: "6%", fill: "#0763e7" }} />
+          <WatchingIcon className="mr-3" style={{ width: "6%", fill: "#ce8a21" }} />
         </>
       )}
       {type === "PullRequestEvent" && (

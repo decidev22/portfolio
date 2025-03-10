@@ -4,6 +4,7 @@ import TextFlip from "../../animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
 import NewZealandMap from "../../common_components/NewZealandMap";
 import SydneyOperaHouse from "../../common_components/SydneyOperaHouse";
+import WavingIcon from "../../animation/WavingIcon";
 
 const Main_Greeting = () => {
   const [width, setWidth] = useState(0);
