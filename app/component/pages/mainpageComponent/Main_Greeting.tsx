@@ -4,6 +4,7 @@ import TextFlip from "../../animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
 import NewZealandMap from "../../common_components/NewZealandMap";
 import SydneyOperaHouse from "../../common_components/SydneyOperaHouse";
+import WavingIcon from "../../animation/WavingIcon";
 
 const Main_Greeting = () => {
   const [width, setWidth] = useState(0);
@@ -41,23 +42,23 @@ const Main_Greeting = () => {
   );
 
   return (
-    <div className="h-screen mt-[200px]">
-      <div className="flex-col largeText">
+    <div className="mt-[200px]">
+      <div className="flex-col largeText sm:text-[40px]">
         <div className="inline-block">G&apos;Day!</div>
         <div>My name is Andy Baeck, a</div>
       </div>
-      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8489f6" />
-      <div className="flex-col w-full largeText">
+      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50 sm:text-[40px]" hoverColor="#8489f6" />
+      <div className="flex-col w-full largeText sm:text-[40px]">
         In <div className="inline-flex">Sydney, Australia</div>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row">
-          <span className="largeText">I work with... </span>
+          <span className="largeText sm:text-[40px]">I work with... </span>
         </div>
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>
           <TextFlip
-            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS & Firebase", "TypeScript", "Python", "Go", "MongoDB & PostgreSQL"]}
+            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS & Firebase", "TypeScript", "Python", "GoLang", "MongoDB & PostgreSQL"]}
             className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400 rounded-lg"
             size="large"
             loadingMessage="Loading interests..."

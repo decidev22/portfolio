@@ -1,4 +1,7 @@
 import BranchIcon from "@/public/gitIcons/branch.svg";
+import CommitIcon from "@/public/gitIcons/commit.svg";
+import PullRequestIcon from "@/public/gitIcons/pullrequest.svg";
+import WatchingIcon from "@/public/gitIcons/watching.svg";
 
 type ActivityType = "PullRequestEvent" | "PushEvent" | "WatchEvent" | "CreateEvent";
 
@@ -20,7 +23,22 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, content }) => {
     <div className="flex">
       {type === "CreateEvent" && (
         <>
-          <BranchIcon className="mr-2" style={{ width: "5%", fill: "#8200db" }} />
+          <BranchIcon className="mr-3" style={{ width: "6%", fill: "#8200db" }} />
+        </>
+      )}
+      {type === "PushEvent" && (
+        <>
+          <CommitIcon className="mr-3" style={{ width: "6%", fill: "#0763e7" }} />
+        </>
+      )}
+      {type === "WatchEvent" && (
+        <>
+          <WatchingIcon className="mr-3" style={{ width: "6%", fill: "#ce8a21" }} />
+        </>
+      )}
+      {type === "PullRequestEvent" && (
+        <>
+          <PullRequestIcon className="mr-3" style={{ width: "6%", fill: "#00a34f" }} />
         </>
       )}
       <div className={`flex border border-1 border-white rounded-lg w-min ${activityStyles[type]} p-2 mt-2`}>

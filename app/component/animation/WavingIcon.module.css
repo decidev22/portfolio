@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+  left: 50%;
+  top: 23%;
+  z-index: 10;
+}
+
+/* .waveMotion {
+
+} */
