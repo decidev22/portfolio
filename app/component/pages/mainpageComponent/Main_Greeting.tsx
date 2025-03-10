@@ -57,7 +57,7 @@ const Main_Greeting = () => {
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>
           <TextFlip
-            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS & Firebase", "TypeScript", "Python", "Go", "MongoDB & PostgreSQL"]}
+            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS & Firebase", "TypeScript", "Python", "GoLang", "MongoDB & PostgreSQL"]}
             className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400 rounded-lg"
             size="large"
             loadingMessage="Loading interests..."

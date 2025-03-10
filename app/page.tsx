@@ -4,7 +4,6 @@ import Loading from "./loading";
 import NavBar from "./component/nav/NavBar";
 import MainPageLayout from "./component/ui/MainPage";
 import MainBottom from "./component/pages/mainPageComponent/Main_Bottom";
-import { poppins } from "./fonts";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
