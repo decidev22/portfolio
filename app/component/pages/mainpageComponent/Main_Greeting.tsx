@@ -42,18 +42,18 @@ const Main_Greeting = () => {
   );
 
   return (
-    <div className="h-screen mt-[200px]">
-      <div className="flex-col largeText">
+    <div className="mt-[200px]">
+      <div className="flex-col largeText sm:text-[40px]">
         <div className="inline-block">G&apos;Day!</div>
         <div>My name is Andy Baeck, a</div>
       </div>
-      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50" hoverColor="#8489f6" />
-      <div className="flex-col w-full largeText">
+      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50 sm:text-[40px]" hoverColor="#8489f6" />
+      <div className="flex-col w-full largeText sm:text-[40px]">
         In <div className="inline-flex">Sydney, Australia</div>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row">
-          <span className="largeText">I work with... </span>
+          <span className="largeText sm:text-[40px]">I work with... </span>
         </div>
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>

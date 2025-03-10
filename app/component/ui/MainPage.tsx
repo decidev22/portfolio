@@ -1,16 +1,15 @@
 import ActivityBox from "../github_components/ActivityBox";
-import Main_Content from "../pages/mainPageComponent/Main_Content";
 import Main_Greeting from "../pages/mainPageComponent/Main_Greeting";
 import classes from "./MainPage.module.css";
 
 const MainPageLayout = () => {
   return (
     <>
-      <div className="grid grid-col grid-cols-5 w-full h-screen px-5">
-        <div className="col-span-2 grid grid-row z-10 min-w-max">
+      <div className="flex w-full px-5 2xl:!flex-row justify-center place-items-baseline mr-[100px] sm:flex-col">
+        <div className="z-10 min-w-max">
           <Main_Greeting />
         </div>
-        <div className="col-span-3">
+        <div className="2xl:mt-0 ml-[100px]  sm: mt-10 w-min">
           <div className={`absolute ${classes.activityBoxContainer}`}>
             <div>
               <p>I am doing...</p>
@@ -21,9 +20,6 @@ const MainPageLayout = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <Main_Content />
       </div>
     </>
   );
