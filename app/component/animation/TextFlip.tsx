@@ -34,21 +34,21 @@ const TextFlip: React.FC<TextFlipProp> = ({ text, className, size, loadingMessag
     <>
       {(!size || size === "large") && (
         <div key={key} className={`${className} ${classes.textflipBox} ${classes.transitionWidth}`}>
-          <p className={`${classes["text-flip-large"]} ${classes["text-bounce"]} sm:!text-[40px]`}>
+          <p className={`${classes["text-flip-large"]} ${classes["text-bounce"]} sm:!text-[40px] lg:!text-[50px] xl:!text-[55px]`}>
             {!displayText ? loadingMessage : displayText}
           </p>
         </div>
       )}
       {size === "medium" && (
         <div key={key} className={`${className} ${classes.textflipBox}`}>
-          <p className={`inline-flex ${classes["text-flip-medium"]} ${classes["text-bounce"]} sm:!text-[40px]`}>
+          <p className={`inline-flex ${classes["text-flip-medium"]} ${classes["text-bounce"]}`}>
             {!displayText ? loadingMessage : displayText}
           </p>
         </div>
       )}
       {size === "small" && (
         <div key={key} className={`${className} ${classes.textflipBox}`}>
-          <p key={key} className={`inline-flex ${classes["text-flip-small"]} ${classes["text-bounce"]} sm:!text-[40px]`}>
+          <p key={key} className={`inline-flex ${classes["text-flip-small"]} ${classes["text-bounce"]}`}>
             {!displayText ? loadingMessage : displayText}
           </p>
         </div>
