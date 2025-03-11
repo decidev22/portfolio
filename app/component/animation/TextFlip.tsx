@@ -55,7 +55,7 @@ const TextFlip: React.FC<TextFlipProp> = ({ text, className, size, loadingMessag
       )}
       {size === "nav" && (
         <div key={key} className={`${className} ${classes.textflipBox}`}>
-          <p key={key} className={`inline-flex ${classes["text-flip-nav"]}} md:text-[20px] sm:text-[20px]`}>
+          <p key={key} className={`inline-flex ${classes["text-flip-nav"]}} md:!text-[20px] sm:!text-[15px]`}>
             {!displayText ? loadingMessage : displayText}
           </p>
         </div>
