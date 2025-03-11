@@ -43,17 +43,21 @@ const Main_Greeting = () => {
 
   return (
     <div className="mt-[200px]">
-      <div className="flex-col largeText sm:text-[40px]">
+      <div className="flex-col largeText sm:text-[40px] lg:text-[55px] xl:text-[60px]">
         <div className="inline-block">G&apos;Day!</div>
         <div>My name is Andy Baeck, a</div>
       </div>
-      <AnimationText text="SOFTWARE ENGINEER" className="stressText z-50 sm:text-[40px]" hoverColor="#8489f6" />
-      <div className="flex-col w-full largeText sm:text-[40px]">
+      <AnimationText
+        text="SOFTWARE ENGINEER"
+        className="stressText z-50 sm:text-[40px] lg:text-[50px] xl:text-[55px]"
+        hoverColor="#8489f6"
+      />
+      <div className="flex-col w-full largeText sm:text-[40px] lg:text-[50px xl:text-[55px]">
         In <div className="inline-flex">Sydney, Australia</div>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row">
-          <span className="largeText sm:text-[40px]">I work with... </span>
+          <span className="largeText sm:text-[40px] lg:text-[50px] xl:text-[55px]">I work with... </span>
         </div>
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>
