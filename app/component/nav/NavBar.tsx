@@ -10,7 +10,10 @@ const NavBar = () => {
   return (
     <nav className="flex items-center w-full top-0 sticky z-50 h-[55px] bg-black">
       <div className="flex-1">
-        <SomeNews news={["I'm open for new opportunities!", "Remote ANZ or Sydney NSW"]} reactComponent={<SydneyOperaHouse />} />
+        <SomeNews
+          news={["I'm open to new opportunities!", "Remote ANZ or Sydney NSW", "Open to: BackEnd", "Open to: Full-Stack"]}
+          reactComponent={<SydneyOperaHouse />}
+        />
       </div>
       <ul className="hidden lg:flex ml-auto list-none ">
         <NavLink href="/" title="Home" />

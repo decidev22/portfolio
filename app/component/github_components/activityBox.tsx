@@ -5,10 +5,25 @@ import WatchingIcon from "@/public/gitIcons/watching.svg";
 
 type ActivityType = "PullRequestEvent" | "PushEvent" | "WatchEvent" | "CreateEvent";
 
+type Author = {
+  email: string;
+  name: string;
+};
+
+type Payload = {
+  ref: string;
+  commits: [{ author: Author; message: String; url: String }];
+  message: string;
+  url: string;
+};
+
 // expects IGithubActivity[] from be api, but just process it as string on repo title here.
 interface ActivityBoxInterface {
   type: ActivityType;
-  content: string;
+  repo: string;
+  repo_url: string;
+  payload: Payload;
+  date: string;
 }
 
 const activityStyles: Record<ActivityType, string> = {
@@ -18,7 +33,7 @@ const activityStyles: Record<ActivityType, string> = {
   CreateEvent: "bg-purple-600 border-purple-300",
 };
 
-const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, content }) => {
+const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, payload, date }) => {
   return (
     <div className="flex">
       {type === "CreateEvent" && (
@@ -44,7 +59,9 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, content }) => {
       <div className={`flex border border-1 border-white rounded-lg w-min ${activityStyles[type]} p-2 mt-2`}>
         <div className={`text-white`}>
           <div>{type}</div>
-          <div>{content}</div>
+          <div>{repo}</div>
+          {Array.isArray(payload?.commits) && payload.commits.length > 0 && <div>{payload.commits[0].message}</div>}
+          <div></div>
         </div>
       </div>
     </div>

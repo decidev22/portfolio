@@ -41,14 +41,21 @@ const MainPageLayout = () => {
           <Main_Greeting />
         </div>
         <div className="2xl:mt-0 ml-[100px]  sm: mt-10 w-min">
-          <div className={`absolute ${classes.activityBoxContainer}`}>
+          <div className={`absolute ${classes.activityBoxContainer} overflow-auto`}>
             <div>
               {loading ? <p>Loading...</p> : null}
               {error ? <p>Error loading :&lt;</p> : null}
               <p>I am doing...</p>
               {githubActivities.length > 0 ? (
                 githubActivities.map((activity: any, index: any) => (
-                  <ActivityBox key={index} type={activity.type} content={activity.repo_name} />
+                  <ActivityBox
+                    key={index}
+                    type={activity.type}
+                    repo={activity.repo_name}
+                    repo_url={activity.repo_url}
+                    payload={activity.payload}
+                    date={activity.date}
+                  />
                 ))
               ) : (
                 <p>No recent activities.</p>
