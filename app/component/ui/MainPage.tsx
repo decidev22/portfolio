@@ -36,12 +36,12 @@ const MainPageLayout = () => {
   }, []);
   return (
     <>
-      <div className="flex w-full px-5 2xl:!flex-row justify-center place-items-baseline mr-[100px] sm:flex-col">
+      <div className="flex w-full px-5 flex-col 2xl:flex-row justify-center place-items-baseline mr-[100px]">
         <div className="z-10 min-w-max">
           <Main_Greeting />
         </div>
-        <div className="2xl:mt-0 ml-[100px]  sm: mt-10 w-min">
-          <div className={`hidden xl:block absolute ${classes.activityBoxContainer} overflow-auto`}>
+        <div className="mt-10 w-min 2xl:mt-0 ml-[100px]">
+          <div className={`overflow-auto xl:block absolute ${classes.activityBoxContainerXl} 2xl:${classes.activityBoxContainer2Xl}`}>
             <div>
               {loading ? <p>Loading...</p> : null}
               {error ? <p>Error loading :&lt;</p> : null}
