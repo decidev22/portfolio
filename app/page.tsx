@@ -30,7 +30,7 @@ export default function Home() {
     return <Loading />;
   }
   return (
-    <main className={`poppins-font flex min-h-screen flex-col items-center w-full px-5 overflow-hidden`}>
+    <main className={`poppins-font flex flex-col items-center w-full px-5 overflow-hidden`}>
       <NavBar />
       <MainPageLayout />
       <MainBottom />
