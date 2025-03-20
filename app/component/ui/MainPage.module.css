@@ -1,4 +1,20 @@
-.activityBoxContainer {
+.activityBoxContainerXl {
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  /* this border only to stay for guide */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  width: 600px;
+  height: 350px;
+  /* This will be manually done for responsive layout */
+  /* top: 15%;
+  left: 40%; */
+  z-index: 10;
+  padding: 15px;
+  scrollbar-width: none;
+}
+
+.activityBoxContainer2Xl {
   position: relative;
   background-color: rgb(0, 0, 0);
   /* this border only to stay for guide */
