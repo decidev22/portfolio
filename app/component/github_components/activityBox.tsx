@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 import BranchIcon from "@/public/gitIcons/branch.svg";
 import CommitIcon from "@/public/gitIcons/commit.svg";
 import PullRequestIcon from "@/public/gitIcons/pullrequest.svg";
@@ -58,12 +60,12 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, pay
       )}
       <div className={`flex border border-1 border-white rounded-lg w-min ${activityStyles[type]} p-2 mt-2`}>
         <div className={`text-white`}>
-          <div>{type}</div>
-          <div>{repo}</div>
-          {Array.isArray(payload?.commits) && payload.commits.length > 0 && <div>{payload.commits[0].message}</div>}
-          <div></div>
+          <div className="max-w-[300px] min-w-[250px] flex-1">{repo} Repository</div>
+          {Array.isArray(payload?.commits) && payload.commits.length > 0 && <div className="w-[250px]">{payload.commits[0].message}</div>}
+          <div>Test</div>
         </div>
       </div>
+      <div className="ml-2 flex items-end">{DateTime.fromISO(date).toFormat("dd-MM-yyyy")}</div>
     </div>
   );
 };

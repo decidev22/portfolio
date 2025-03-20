@@ -41,7 +41,7 @@ const MainPageLayout = () => {
           <Main_Greeting />
         </div>
         <div className="mt-10 w-min 2xl:mt-0 ml-[100px]">
-          <div className={`overflow-auto xl:block absolute ${classes.activityBoxContainerXl} 2xl:${classes.activityBoxContainer2Xl}`}>
+          <div className={`overflow-auto absolute ${classes.activityBoxContainerXl} 2xl:${classes.activityBoxContainer2Xl}`}>
             <div>
               {loading ? <p>Loading...</p> : null}
               {error ? <p>Error loading :&lt;</p> : null}

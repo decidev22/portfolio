@@ -42,7 +42,7 @@ const Main_Greeting = () => {
   );
 
   return (
-    <div className="mt-[200px]">
+    <div className="mt-[130px]">
       {/* <div className="flex-col largeText sm:text-[40px] lg:text-[55px] xl:text-[60px]">
         <div className="inline-block">G&apos;Day!</div>
         <div>My name is Andy Baeck, a</div>
@@ -62,7 +62,7 @@ const Main_Greeting = () => {
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>
           <TextFlip
-            text={["NodeJS BackEnd", "ReactJS FrontEnd", "AWS & Firebase", "TypeScript", "Python", "GoLang", "MongoDB & PostgreSQL"]}
+            text={["Fintech", "Start-up", "Artificial Intelligence", "LLM", "Productivity Application"]}
             className="whitespace-nowrap px-2 bg-gradient-to-r from-blue-500 to-violet-400 rounded-lg"
             size="large"
             loadingMessage="Loading interests..."
