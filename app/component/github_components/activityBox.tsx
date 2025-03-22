@@ -4,6 +4,7 @@ import BranchIcon from "@/public/gitIcons/branch.svg";
 import CommitIcon from "@/public/gitIcons/commit.svg";
 import PullRequestIcon from "@/public/gitIcons/pullrequest.svg";
 import WatchingIcon from "@/public/gitIcons/watching.svg";
+import classes from "./activityBox.module.css";
 
 type ActivityType = "PullRequestEvent" | "PushEvent" | "WatchEvent" | "CreateEvent";
 
@@ -37,7 +38,7 @@ const activityStyles: Record<ActivityType, string> = {
 
 const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, payload, date }) => {
   return (
-    <div className="flex">
+    <div className={`flex`}>
       {type === "CreateEvent" && (
         <>
           <BranchIcon className="mr-3" style={{ width: "6%", fill: "#8200db" }} />
@@ -58,14 +59,16 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, pay
           <PullRequestIcon className="mr-3" style={{ width: "6%", fill: "#00a34f" }} />
         </>
       )}
-      <div className={`flex border border-1 border-white rounded-lg w-min ${activityStyles[type]} p-2 mt-2`}>
-        <div className={`text-white`}>
-          <div className="max-w-[300px] min-w-[250px] flex-1">{repo} Repository</div>
-          {Array.isArray(payload?.commits) && payload.commits.length > 0 && <div className="w-[250px]">{payload.commits[0].message}</div>}
+      <div className={`flex border border-1 border-white rounded-lg w-min ${activityStyles[type]} p-2 mt-2 ${classes.activityContainer}`}>
+        <div className={`text-white ${classes.activityContainerInner}`}>
+          <div className="max-w-[300px] min-w-[250px] flex-1 font-bold">Repository: {repo}</div>
+          {Array.isArray(payload?.commits) && payload.commits.length > 0 && (
+            <div className="max-w-[400px]">{payload.commits[0].message}</div>
+          )}
           <div>Test</div>
         </div>
       </div>
-      <div className="ml-2 flex items-end">{DateTime.fromISO(date).toFormat("dd-MM-yyyy")}</div>
+      <div className="ml-2 flex min-w-max items-end">{DateTime.fromISO(date).toFormat("dd-MM-yyyy")}</div>
     </div>
   );
 };
