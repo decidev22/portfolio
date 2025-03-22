@@ -1,0 +1,45 @@
+@keyframes reveal {
+  0% {
+    width: 0%;
+  }
+  10% {
+    width: 5%;
+  }
+  20% {
+    width: 10%;
+  }
+  30% {
+    width: 15%;
+  }
+  100% {
+    width: 100%; /* Adjust this based on content */
+  }
+}
+
+.activityContainer {
+  overflow: hidden;
+  position: relative;
+  width: 0; /* Start hidden */
+  animation: reveal 1s ease-out forwards; /* Animate the box itself */
+}
+
+/* @keyframes revealInner {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  15% {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.activityContainerInner {
+  animation: revealInner 1s ease-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+} */

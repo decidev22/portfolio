@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ActivityBox from "../github_components/ActivityBox";
+import ActivityBox from "../github_components/activityBox";
 import Main_Greeting from "../pages/mainPageComponent/Main_Greeting";
 import classes from "./MainPage.module.css";
 
@@ -36,16 +36,16 @@ const MainPageLayout = () => {
   }, []);
   return (
     <>
-      <div className="flex w-full px-5 flex-col 2xl:flex-row justify-center place-items-baseline mr-[100px]">
+      <div className="flex w-full px-5 flex-col 2xl:flex-row justify-center place-items-baseline mr-[100px] max-h-screen overflow-hidden">
         <div className="z-10 min-w-max">
           <Main_Greeting />
         </div>
         <div className="mt-10 w-min 2xl:mt-0 ml-[100px]">
-          <div className={`overflow-auto absolute ${classes.activityBoxContainerXl} 2xl:${classes.activityBoxContainer2Xl}`}>
+          <div className={`overflow-auto absolute ${classes.activityBoxContainerXl} ${classes.activityBoxContainer2Xl}`}>
             <div>
               {loading ? <p>Loading...</p> : null}
               {error ? <p>Error loading :&lt;</p> : null}
-              <p>I am doing...</p>
+              <p>My recent Activities</p>
               {githubActivities.length > 0 ? (
                 githubActivities.map((activity: any, index: any) => (
                   <ActivityBox
