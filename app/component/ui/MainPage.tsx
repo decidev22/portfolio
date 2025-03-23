@@ -52,7 +52,7 @@ const MainPageLayout = () => {
                     key={index}
                     type={activity.type}
                     repo={activity.repo_name}
-                    repo_url={activity.repo_url}
+                    repo_url={activity.repo_url.match(/repos\/([^/]+\/[^/]+)/)[1]}
                     payload={activity.payload}
                     date={activity.date}
                   />
