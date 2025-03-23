@@ -1,67 +1,42 @@
-import { useEffect, useState } from "react";
-import ActivityBox from "../github_components/activityBox";
 import Main_Greeting from "../pages/mainPageComponent/Main_Greeting";
+import MainActivities from "../pages/mainPageComponent/Main_Activities";
+import Main_Content from "../pages/mainPageComponent/Main_Content";
 import classes from "./MainPage.module.css";
+import { useState } from "react";
 
 const MainPageLayout = () => {
-  const [githubActivities, setGithubActivities] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [rotation, setRotation] = useState(0);
 
-  useEffect(() => {
-    const fetchGithubActivities = async () => {
-      const lambdaUrl = process.env.NEXT_PUBLIC_GET_GITHUB_ACTIVITIES_LAMBDA_URL;
-      if (!lambdaUrl) {
-        setError("Lambda URL is missing in environment variables.");
-        setLoading(false);
-        return;
-      }
+  const contents = [<Main_Greeting key="main-greeting" />, <MainActivities key="main-activities" />, <Main_Content key="main-content" />];
+  const handleRotate = () => {
+    console.log("Rotating!", rotation);
+    setRotation(rotation + 360 / contents.length); // change this later
+  };
 
-      try {
-        const response = await fetch(lambdaUrl);
-        if (!response.ok) {
-          throw new Error("Failed to fetch GitHub activities");
-        }
+  const radius = 250;
 
-        const data = await response.json();
-        setGithubActivities(data);
-        setLoading(false);
-      } catch (error: any) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
-
-    fetchGithubActivities();
-  }, []);
+  const items = contents.map((content, index) => {
+    const angle = index * (360 / contents.length) + rotation;
+    return (
+      <div
+        key={index}
+        style={{
+          transform: `rotate(${angle}deg) translateY(-${radius}px)`,
+          transformOrigin: "bottom",
+          position: "absolute",
+          height: "100vh",
+        }}
+      >
+        {content}
+      </div>
+    );
+  });
   return (
     <>
-      <div className="flex w-full px-5 flex-col 2xl:flex-row justify-center place-items-baseline mr-[100px] max-h-screen overflow-hidden">
-        <div className="z-10 min-w-max">
-          <Main_Greeting />
-        </div>
-        <div className="mt-10 w-min 2xl:mt-0 ml-[100px]">
-          <div className={`overflow-auto absolute ${classes.activityBoxContainerXl} ${classes.activityBoxContainer2Xl}`}>
-            <div>
-              {loading ? <p>Loading...</p> : null}
-              {error ? <p>Error loading :&lt;</p> : null}
-              <p>My recent Activities</p>
-              {githubActivities.length > 0 ? (
-                githubActivities.map((activity: any, index: any) => (
-                  <ActivityBox
-                    key={index}
-                    type={activity.type}
-                    repo={activity.repo_name}
-                    repo_url={activity.repo_url.match(/repos\/([^/]+\/[^/]+)/)[1]}
-                    payload={activity.payload}
-                    date={activity.date}
-                  />
-                ))
-              ) : (
-                <p>No recent activities.</p>
-              )}
-            </div>
-          </div>
+      <div className={`${classes.rotationContainer}`}>
+        <div className={`flex w-full justify-center max-h-screen overflow-hidden`}>{items}</div>
+        <div className="absolute right-0 z-10">
+          <button onClick={handleRotate}>Rotate</button>
         </div>
       </div>
     </>
