@@ -34,7 +34,7 @@ const TextFlip: React.FC<TextFlipProp> = ({ text, className, size, loadingMessag
     <>
       {(!size || size === "large") && (
         <div key={key} className={`${className} ${classes.textflipBox} ${classes.transitionWidth}`}>
-          <p className={`${classes["text-flip-large"]} ${classes["text-bounce"]} sm:!text-[40px] lg:!text-[50px] xl:!text-[55px]`}>
+          <p className={`${classes["text-flip-large"]} ${classes["text-bounce"]} sm:!text-[35px] lg:!text-[50px] xl:!text-[55px]`}>
             {!displayText ? loadingMessage : displayText}
           </p>
         </div>

@@ -74,7 +74,12 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, pay
               </div>
             </div>
           )}
-          {payload?.action && <div className="max-w-[250px] px-1">Branch {payload.action}</div>}
+          {payload?.action && type != "WatchEvent" && <div className="max-w-[250px] px-1">Branch {payload.action}</div>}
+          {payload?.action && type === "WatchEvent" && (
+            <div className="max-w-[250px] px-1">
+              {payload.action === "started" ? "Started watching branch" : "No longer watching branch"}
+            </div>
+          )}
         </div>
       </div>
       <div className="ml-2 flex min-w-max items-end">{DateTime.fromISO(date).toFormat("dd-MM-yyyy")}</div>
