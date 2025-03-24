@@ -35,8 +35,10 @@ const MainActivities = () => {
   }, []);
 
   return (
-    <div className="mt-10 w-min 2xl:mt-0 ml-[100px]">
-      <div className={`overflow-auto absolute ${classes.activityBoxContainerXl} ${classes.activityBoxContainer2Xl}`}>
+    <div className="mt-10 w-min 2xl:mt-0">
+      <div
+        className={`overflow-auto absolute ${classes.activityBoxContainer} ${classes.activityBoxContainerL} ${classes.activityBoxContainerXL} ${classes.activityBoxContainer2Xl}`}
+      >
         <div>
           {loading ? <p>Loading...</p> : null}
           {error ? <p>Error loading :&lt;</p> : null}

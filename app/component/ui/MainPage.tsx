@@ -9,8 +9,10 @@ const MainPageLayout = () => {
 
   const contents = [<Main_Greeting key="main-greeting" />, <MainActivities key="main-activities" />, <Main_Content key="main-content" />];
   const handleRotate = () => {
-    console.log("Rotating!", rotation);
-    setRotation(rotation + 360 / contents.length); // change this later
+    setRotation(rotation + 360 / contents.length);
+  };
+  const handleCounterRotate = () => {
+    setRotation(rotation - 360 / contents.length);
   };
 
   const radius = 250;
@@ -33,10 +35,13 @@ const MainPageLayout = () => {
   });
   return (
     <>
-      <div className={`${classes.rotationContainer}`}>
+      <div className={`${classes.rotationContainer} flex items-center justify-center h-screen`}>
+        <div className="absolute left-0 z-10">
+          <button onClick={handleCounterRotate}>Left</button>
+        </div>
         <div className={`flex w-full justify-center max-h-screen overflow-hidden`}>{items}</div>
         <div className="absolute right-0 z-10">
-          <button onClick={handleRotate}>Rotate</button>
+          <button onClick={handleRotate}>Right</button>
         </div>
       </div>
     </>

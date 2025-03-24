@@ -2,9 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import AnimationText from "../../animation/AnimationText";
 import TextFlip from "../../animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
-import NewZealandMap from "../../common_components/NewZealandMap";
-import SydneyOperaHouse from "../../common_components/SydneyOperaHouse";
-import WavingIcon from "../../animation/WavingIcon";
 
 const Main_Greeting = () => {
   const [width, setWidth] = useState(0);
@@ -49,7 +46,7 @@ const Main_Greeting = () => {
       </div> */}
       <AnimationText
         text="A SOFTWARE ENGINEER"
-        className="stressText z-50 sm:text-[40px] lg:text-[50px] xl:text-[50px]"
+        className="stressText z-50 sm:text-[35px] lg:text-[50px] xl:text-[50px]"
         hoverColor="#8489f6"
       />
       <div className="flex-col w-full largeText sm:text-[40px] lg:text-[50px xl:text-[50px]">
@@ -57,7 +54,7 @@ const Main_Greeting = () => {
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row">
-          <span className="largeText sm:text-[40px] lg:text-[50px] xl:text-[50px]">Interested & Experienced in... </span>
+          <span className="largeText sm:text-[35px] lg:text-[50px] xl:text-[50px]">Interested & Experienced in... </span>
         </div>
 
         <div className={`flex-col w-min h-min`} ref={observedDiv}>
