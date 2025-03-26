@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ActivityBox from "../../github_components/activityBox";
+import ActivityBox from "../github_components/activityBox";
 import classes from "./Main_Activities.module.css";
 
 const MainActivities = () => {

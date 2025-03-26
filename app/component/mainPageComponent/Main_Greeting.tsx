@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import AnimationText from "../../animation/AnimationText";
-import TextFlip from "../../animation/TextFlip";
+import AnimationText from "../animation/text-animation/AnimationText";
+import TextFlip from "../animation/text-animation/TextFlip";
 import classes from "./Main_Greeting.module.css";
 
 const Main_Greeting = () => {
@@ -39,7 +39,7 @@ const Main_Greeting = () => {
   );
 
   return (
-    <div className="mt-[130px]">
+    <div className="mt-[50px]">
       {/* <div className="flex-col largeText sm:text-[40px] lg:text-[55px] xl:text-[60px]">
         <div className="inline-block">G&apos;Day!</div>
         <div>My name is Andy Baeck, a</div>
