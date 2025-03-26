@@ -77,7 +77,7 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, pay
           {payload?.action && type != "WatchEvent" && <div className="max-w-[250px] px-1">Branch {payload.action}</div>}
           {payload?.action && type === "WatchEvent" && (
             <div className="max-w-[250px] px-1">
-              {payload.action === "started" ? "Started watching branch" : "No longer watching branch"}
+              {payload.action === "started" ? "Started woatching branch" : "No longer watching branch"}
             </div>
           )}
         </div>
