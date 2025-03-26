@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Loading from "./loading";
 import NavBar from "./component/nav/NavBar";
 import MainPageLayout from "./component/ui/MainPage";
-import MainBottom from "./component/pages/mainPageComponent/Main_Bottom";
+import MainBottom from "./component/mainPageComponent/Main_Bottom";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);

@@ -1,8 +1,9 @@
-import Main_Greeting from "../pages/mainPageComponent/Main_Greeting";
-import MainActivities from "../pages/mainPageComponent/Main_Activities";
-import Main_Content from "../pages/mainPageComponent/Main_Content";
+import Main_Greeting from "../mainPageComponent/Main_Greeting";
+import MainActivities from "../mainPageComponent/Main_Activities";
+import Main_Content from "../mainPageComponent/Main_Content";
 import classes from "./MainPage.module.css";
 import { useState } from "react";
+import CompasComponent from "../animation/graphic-animation/Compas";
 
 const MainPageLayout = () => {
   const [rotation, setRotation] = useState(0);
@@ -43,6 +44,7 @@ const MainPageLayout = () => {
         <div className="absolute right-0 z-10">
           <button onClick={handleRotate}>Right</button>
         </div>
+        <CompasComponent />
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import TextFlip from "../animation/TextFlip";
+import TextFlip from "../animation/text-animation/TextFlip";
 
 interface SomwNewsInterface {
   news: string[];
