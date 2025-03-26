@@ -6,7 +6,7 @@ import PullRequestIcon from "@/public/gitIcons/pullrequest.svg";
 import WatchingIcon from "@/public/gitIcons/watching.svg";
 import classes from "./activityBox.module.css";
 
-type ActivityType = "PullRequestEvent" | "PushEvent" | "WatchEvent" | "CreateEvent";
+type ActivityType = "PullRequestEvent" | "PushEvent" | "WatchEvent" | "CreateEvent" | "IssueCommentEvent";
 
 type Author = {
   email: string;
@@ -35,6 +35,7 @@ const activityStyles: Record<ActivityType, string> = {
   PushEvent: "bg-blue-600 border-blue-300",
   WatchEvent: "bg-yellow-600 border-yellow-300",
   CreateEvent: "bg-purple-600 border-purple-300",
+  IssueCommentEvent: "bg-blue-400 border-blue-200",
 };
 
 const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, payload, date }) => {
@@ -46,6 +47,11 @@ const ActivityBox: React.FC<ActivityBoxInterface> = ({ type, repo, repo_url, pay
         </>
       )}
       {type === "PushEvent" && (
+        <>
+          <CommitIcon className="mr-3" style={{ width: 25, fill: "#0763e7" }} />
+        </>
+      )}
+      {type === "IssueCommentEvent" && (
         <>
           <CommitIcon className="mr-3" style={{ width: 25, fill: "#0763e7" }} />
         </>
