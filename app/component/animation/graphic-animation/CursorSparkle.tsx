@@ -2,52 +2,61 @@ import { useEffect, useRef, useState } from "react";
 
 const CursorTrailEffect = () => {
   const [coordinates, setCoordinates] = useState<{ x: number; y: number; time: number }[]>([]);
+  const [mounted, setMounted] = useState(false); // Track if the component has mounted
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    const updateMousePosition = (event: MouseEvent) => {
-      const currentTime = Date.now();
+    if (typeof window !== "undefined") {
+      setMounted(true); // Set mounted to true after the component is mounted in the browser
 
-      setCoordinates((prev) =>
-        [...prev, { x: event.clientX, y: event.clientY, time: currentTime }].filter((point) => currentTime - point.time < 2000)
-      );
-    };
+      const updateMousePosition = (event: MouseEvent) => {
+        const currentTime = Date.now();
 
-    const draw = () => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
+        setCoordinates((prev) =>
+          [...prev, { x: event.clientX, y: event.clientY, time: currentTime }].filter((point) => currentTime - point.time < 2000)
+        );
+      };
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const draw = () => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
 
-      const currentTime = Date.now();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw independent lines with fading effect
-      coordinates.forEach(({ x, y, time }, index) => {
-        const age = currentTime - time;
-        const opacity = 1 - age / 1500;
+        const currentTime = Date.now();
 
-        if (index > 0 && opacity > 0) {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(200, 50, 50, ${opacity})`;
-          ctx.lineWidth = 1;
-          ctx.moveTo(coordinates[index - 1].x, coordinates[index - 1].y);
-          ctx.lineTo(x, y);
-          ctx.stroke();
-        }
-      });
+        // Draw independent lines with fading effect
+        coordinates.forEach(({ x, y, time }, index) => {
+          const age = currentTime - time;
+          const opacity = 1 - age / 1500;
 
-      requestAnimationFrame(draw);
-    };
+          if (index > 0 && opacity > 0) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(200, 50, 50, ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(coordinates[index - 1].x, coordinates[index - 1].y);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+          }
+        });
 
-    window.addEventListener("mousemove", updateMousePosition);
-    draw();
+        requestAnimationFrame(draw);
+      };
 
-    return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
-    };
+      window.addEventListener("mousemove", updateMousePosition);
+      draw();
+
+      return () => {
+        window.removeEventListener("mousemove", updateMousePosition);
+      };
+    }
   }, [coordinates]);
+
+  if (!mounted) {
+    return null; // Return null during SSR or before the component is mounted
+  }
 
   return (
     <>
