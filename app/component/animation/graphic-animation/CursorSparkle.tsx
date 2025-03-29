@@ -8,9 +8,8 @@ const CursorTrailEffect = () => {
     const updateMousePosition = (event: MouseEvent) => {
       const currentTime = Date.now();
 
-      // Remove points older than 3 seconds
       setCoordinates((prev) =>
-        [...prev, { x: event.clientX, y: event.clientY, time: currentTime }].filter((point) => currentTime - point.time < 3000)
+        [...prev, { x: event.clientX, y: event.clientY, time: currentTime }].filter((point) => currentTime - point.time < 2000)
       );
     };
 
@@ -27,12 +26,12 @@ const CursorTrailEffect = () => {
       // Draw independent lines with fading effect
       coordinates.forEach(({ x, y, time }, index) => {
         const age = currentTime - time;
-        const opacity = 1 - age / 1500; // Fade effect
+        const opacity = 1 - age / 1500;
 
         if (index > 0 && opacity > 0) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(200, 50, 50, ${opacity})`; // Fading red
-          ctx.lineWidth = 3;
+          ctx.strokeStyle = `rgba(200, 50, 50, ${opacity})`;
+          ctx.lineWidth = 1;
           ctx.moveTo(coordinates[index - 1].x, coordinates[index - 1].y);
           ctx.lineTo(x, y);
           ctx.stroke();
