@@ -13,7 +13,6 @@ const MainPageLayout = () => {
   const handleRotate = () => {
     // Old code reference
     // setRotation(rotation + 360 / contents.length);
-    console.log("Click");
     animateRotation(360 / contents.length, 0.15, false);
   };
   const handleCounterRotate = () => {
