@@ -33,9 +33,9 @@ const CompassComponent: React.FC<CompassComponentInterface> = ({ componentName }
   }, []);
   return (
     <>
-      <div className="absolute bottom-[-300px] flex items-center justify-center  border border-1 border-white rounded-full w-[600px] h-[600px] z-10">
+      <div className="absolute bottom-[-300px] flex items-center justify-center  border border-1 border-white border-opacity-50 rounded-full w-[600px] h-[600px] z-10">
         <div
-          className="xl:bottom-[-50%] border border-1 border-white rounded-full w-[400px] h-[400px] z-20 flex items-center justify-center"
+          className="xl:bottom-[-50%] border border-1 border-white border-opacity-70 rounded-full w-[400px] h-[400px] z-20 flex items-center justify-center"
           id="compass"
           style={{
             transform: `rotate(${angle}deg)`,
