@@ -11,11 +11,39 @@ const MainPageLayout = () => {
 
   const contents = [<Main_Greeting key="main-greeting" />, <MainActivities key="main-activities" />, <Main_Content key="main-content" />];
   const handleRotate = () => {
-    setRotation(rotation + 360 / contents.length);
+    // Old code reference
+    // setRotation(rotation + 360 / contents.length);
+    console.log("Click");
+    animateRotation(360 / contents.length, 0.15, false);
   };
   const handleCounterRotate = () => {
-    setRotation(rotation - 360 / contents.length);
+    // Old code reference
+    // setRotation(rotation - 360 / contents.length);
+    animateRotation(360 / contents.length, 0.15, true);
   };
+
+  // direciton true means to Left, false is to Right.
+  function animateRotation(targetDelta: number, easing: number, direction: boolean = true) {
+    let startTime = performance.now();
+    let startRotation = rotation;
+    let signedTargetDelta = targetDelta * (direction ? 1 : -1);
+
+    function step(currentTime: number) {
+      let elapsed = (currentTime - startTime) / 1000;
+      let progress = 1 - Math.pow(1 - easing, elapsed * 60);
+
+      let newRotation = startRotation + signedTargetDelta * progress;
+      setRotation(newRotation);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        setRotation(startRotation + signedTargetDelta);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
 
   const radius = 250;
 

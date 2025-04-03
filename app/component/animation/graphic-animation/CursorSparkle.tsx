@@ -34,7 +34,7 @@ const CursorTrailEffect = () => {
 
           if (index > 0 && opacity > 0) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(200, 50, 50, ${opacity})`;
+            ctx.strokeStyle = `rgba(79, 57, 100, ${opacity})`;
             ctx.lineWidth = 1;
             ctx.moveTo(coordinates[index - 1].x, coordinates[index - 1].y);
             ctx.lineTo(x, y);
