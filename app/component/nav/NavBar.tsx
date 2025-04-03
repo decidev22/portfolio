@@ -18,6 +18,7 @@ const NavBar = () => {
       <ul className="hidden lg:flex ml-auto list-none ">
         <NavLink href="/" title="Home" />
         <NavLink href="/products" title="Products" />
+        <NavLink href="/game" title="Game" />
         <NavLink href="/blogs" title="Blog" />
         <NavLink href="/contact" title="Contact" />
       </ul>
