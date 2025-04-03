@@ -3,7 +3,7 @@ import MainActivities from "../mainPageComponent/Main_Activities";
 import Main_Content from "../mainPageComponent/Main_Content";
 import classes from "./MainPage.module.css";
 import { useState } from "react";
-import CompasComponent from "../animation/graphic-animation/Compas";
+import CompassComponent from "../animation/graphic-animation/Compass";
 import CursorSparkleEffect from "../animation/graphic-animation/CursorSparkle";
 
 const MainPageLayout = () => {
@@ -73,7 +73,7 @@ const MainPageLayout = () => {
           <button onClick={handleRotate}>Right</button>
         </div>
         <CursorSparkleEffect />
-        <CompasComponent />
+        <CompassComponent />
       </div>
     </>
   );
