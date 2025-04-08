@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "../component/nav/NavBar";
 import MainBottom from "../component/mainPageComponent/Main_Bottom";
+import GameStart from "./components/GameStart";
 
 export default function Game() {
   const [gameState, setGameState] = useState<string | null>(null);
@@ -39,7 +40,11 @@ export default function Game() {
         <div className="w-[500px] h-[500px] border border-1 border-white flex justify-center items-center">
           {" "}
           {gameState ? (
-            <div>{gameState}</div>
+            gameState === "game-start" ? (
+              <GameStart />
+            ) : (
+              <div>{gameState}</div>
+            )
           ) : (
             <div className="h-full flex justify-center items-center">Connecting to Game Server...</div>
           )}{" "}
