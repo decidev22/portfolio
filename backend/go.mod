@@ -1,4 +1,4 @@
-module your-module-name
+module nodewar
 
 go 1.24
 

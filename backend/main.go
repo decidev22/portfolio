@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	insertNode "nodewar/api/insertNodeData"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -28,6 +29,7 @@ func main() {
 	})
 
 	r.POST("/create-node", func(c *gin.Context) {
+		// get curr game node coordinate data and see if space is occupied
 		var payload struct {
 			X float64 `json:"x"`
 			Y float64 `json:"y"`
@@ -37,6 +39,7 @@ func main() {
 			return
 		}
 		fmt.Printf("New node created at X: %.2f, Y: %.2f\n", payload.X, payload.Y)
+		insertNode.InsertNodeData(int(payload.X), int(payload.Y))
 		c.JSON(200, gin.H{"message": "node created"})
 	})
 
