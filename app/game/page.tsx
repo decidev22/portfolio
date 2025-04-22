@@ -37,7 +37,7 @@ export default function Game() {
       {/* Game Screen */}
       <div className="flex flex-col">
         <div className="top-1 text-center">Title: Node War!</div>
-        <div className="w-[500px] h-[500px] border border-1 border-white flex justify-center items-center">
+        <div className="w-[510px] h-[510px] border border-1 border-white flex justify-center items-center">
           {" "}
           {gameState ? (
             gameState === "game-start" ? (
@@ -50,7 +50,7 @@ export default function Game() {
           )}{" "}
         </div>
       </div>
-      <div className="grid grid-cols-2 w-[500px] py-5 justify-items-center">
+      <div className="grid grid-cols-2 w-[510px] py-5 justify-items-center">
         <div className="border border-1 rounded-lg h-[50px] w-[100px] text-center content-center" onClick={() => gameStartHandler()}>
           Start
         </div>

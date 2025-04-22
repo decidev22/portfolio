@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	insertNode "nodewar/api/insertNodeData"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -39,7 +38,6 @@ func main() {
 			return
 		}
 		fmt.Printf("New node created at X: %.2f, Y: %.2f\n", payload.X, payload.Y)
-		insertNode.InsertNodeData(int(payload.X), int(payload.Y))
 		c.JSON(200, gin.H{"message": "node created"})
 	})
 
