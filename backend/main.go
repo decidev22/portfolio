@@ -28,6 +28,7 @@ func main() {
 	})
 
 	r.POST("/create-node", func(c *gin.Context) {
+		// get curr game node coordinate data and see if space is occupied
 		var payload struct {
 			X float64 `json:"x"`
 			Y float64 `json:"y"`

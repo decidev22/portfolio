@@ -1,4 +1,4 @@
-package main
+package insertNode
 
 import (
 	"context"
@@ -48,6 +48,7 @@ type User struct {
 	CurrentGame  CurrentGame   `bson:"currentGame"`
 }
 
+
 func init() {
 	err := godotenv.Load("../.env")
 	if err != nil {
@@ -55,7 +56,7 @@ func init() {
 	}
 }
 
-func main() {
+func InsertNodeData(x, y int) {
 	port := os.Getenv("GAME_DB_PORT")
 	mongoURI := os.Getenv("GAME_MONGO_USER_DB_URL")
 
